@@ -1,11 +1,16 @@
 import "./App.css";
+import { MainComponent, Sidebar } from "./components";
+
 
 function App() {
-  return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </>
-  );
+	return (
+		<>
+			<div className="flex flex-wrap flex-row">
+        <Sidebar />
+        <MainComponent />
+			</div>
+		</>
+	);
 }
 
 export default App;
