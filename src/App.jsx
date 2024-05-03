@@ -4,9 +4,13 @@ import { MainComponent, Sidebar } from "./components";
 function App() {
 	return (
 		<>
-			<div className="flex flex-wrap flex-row ">
+			<div className="flex flex-wrap flex-row">
+				<div className="">
 					<Sidebar />
-				<MainComponent />
+				</div>
+				<div>
+					<MainComponent />
+				</div>
 			</div>
 		</>
 	);

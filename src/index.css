@@ -3,22 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --sidebarbc: #f0f4f9;
-  --white: #ffffff;
+	--sidebarbc: #f0f4f9;
+	--white: #ffffff;
 }
 
-.sidebar{
-    @apply w-20 h-[100vh] bg-[var(--sidebarbc)] flex flex-col justify-between;
+.sidebar {
+	@apply h-[100vh] bg-[var(--sidebarbc)] flex flex-col justify-between relative duration-300 items-start;
 }
 .sidebar_top {
-    @apply p-4 flex flex-col gap-20;
+	@apply p-4 flex flex-col gap-20;
 }
 .sidebar_bottom {
-    @apply pb-5;
+	@apply p-5;
 }
 .sidebar_top_img {
-    @apply object-cover w-12 h-12 m-auto cursor-pointer;
+	@apply object-cover w-10 h-10 m-auto cursor-pointer  bg-[#E5EAF1] hover:bg-[#b0b0b0] rounded-full p-2;
 }
+
+.tooltip {
+	@apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+	@apply visible z-50 p-2 rounded-md text-xs  bg-black text-white w-max text-center;
+}
+
 .sidebar_bottom_img {
-    @apply object-contain w-6 h-6 m-auto cursor-pointer mb-3;
+	@apply object-contain w-6 h-6 m-auto cursor-pointer mb-3;
+}
+
+.sidebar_bottom .has-tooltip:hover .tooltip {
+	@apply visible z-50 p-2 rounded-md text-xs left-14  bg-black text-white w-max text-center;
 }

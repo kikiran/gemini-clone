@@ -1,39 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import { assets } from "../../assets/assets";
 
 const Sidebar = () => {
+	const [open, setOpen] = useState(false);
+	const onClickOpenHandler = () => {
+		setOpen(!open);
+	};
 	return (
-		<div className="sidebar">
+		<div className={`sidebar ${open ? "w-60" : "w-20"}`}>
 			<div className="sidebar_top">
-				<img
-					src={assets.menu_icon}
-					alt="sidebar image"
-					className="sidebar_top_img"
-				/>
+				<div className="has-tooltip">
+					<img
+						src={assets.menu_icon}
+						alt="sidebar image"
+						className="sidebar_top_img"
+						onClick={onClickOpenHandler}
+					/>
+					<span class="tooltip">
+						{open ? "Collapse Menu" : "Expand Menu"}
+					</span>
+				</div>
 
-				<img
-					src={assets.plus_icon}
-					alt="sidebar image"
-					className="sidebar_top_img bg-[#E5EAF1] rounded-full p-2"
-				/>
+				<div className="has-tooltip">
+					<img
+						src={assets.plus_icon}
+						alt="sidebar image"
+						className="sidebar_top_img"
+					/>
+					<span class="tooltip">New Chat</span>
+				</div>
 			</div>
 			<div className="sidebar_bottom">
-				<img
-					src={assets.question_icon}
-					alt="sidebar image"
-					className="sidebar_bottom_img"
-				/>
+				<div className="has-tooltip">
+					<img
+						src={assets.question_icon}
+						alt="sidebar image"
+						className="sidebar_bottom_img"
+					/>
+					<span class="tooltip">Help</span>
+				</div>
 
-				<img
-					src={assets.history_icon}
-					alt="sidebar image"
-					className="sidebar_bottom_img"
-				/>
-				<img
-					src={assets.setting_icon}
-					alt="sidebar image"
-					className="sidebar_bottom_img"
-				/>
+				<div className="has-tooltip">
+					<img
+						src={assets.history_icon}
+						alt="sidebar image"
+						className="sidebar_bottom_img"
+					/>
+					<span class="tooltip">Activity</span>
+				</div>
+				<div className="has-tooltip">
+					<img
+						src={assets.setting_icon}
+						alt="sidebar image"
+						className="sidebar_bottom_img"
+					/>
+					<span class="tooltip">Settings</span>
+				</div>
 			</div>
 		</div>
 	);
