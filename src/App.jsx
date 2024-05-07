@@ -4,11 +4,11 @@ import { MainComponent, Sidebar } from "./components";
 function App() {
 	return (
 		<>
-			<div className="flex flex-wrap flex-row">
+			<div className="flex flex-row justify-start w-auto">
 				<div className="">
 					<Sidebar />
 				</div>
-				<div>
+				<div className="w-full">
 					<MainComponent />
 				</div>
 			</div>

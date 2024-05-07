@@ -1,14 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+* {
+	font-family: Outfit;
+}
 :root {
 	--sidebarbc: #f0f4f9;
 	--white: #ffffff;
 }
 
 .sidebar {
-	@apply h-[100vh] bg-[var(--sidebarbc)] flex flex-col justify-between relative duration-300 items-start;
+	@apply h-[99vh] bg-[var(--sidebarbc)] flex flex-col justify-between relative duration-500 items-start;
 }
 .sidebar_top {
 	@apply p-4 flex flex-col gap-20;

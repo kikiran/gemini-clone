@@ -16,7 +16,7 @@ const Sidebar = () => {
 						className="sidebar_top_img"
 						onClick={onClickOpenHandler}
 					/>
-					<span class="tooltip">
+					<span className="tooltip">
 						{open ? "Collapse Menu" : "Expand Menu"}
 					</span>
 				</div>
@@ -27,7 +27,7 @@ const Sidebar = () => {
 						alt="sidebar image"
 						className="sidebar_top_img"
 					/>
-					<span class="tooltip">New Chat</span>
+					<span className="tooltip">New Chat</span>
 				</div>
 			</div>
 			<div className="sidebar_bottom">
@@ -37,7 +37,7 @@ const Sidebar = () => {
 						alt="sidebar image"
 						className="sidebar_bottom_img"
 					/>
-					<span class="tooltip">Help</span>
+					<span className="tooltip">Help</span>
 				</div>
 
 				<div className="has-tooltip">
@@ -46,7 +46,7 @@ const Sidebar = () => {
 						alt="sidebar image"
 						className="sidebar_bottom_img"
 					/>
-					<span class="tooltip">Activity</span>
+					<span className="tooltip">Activity</span>
 				</div>
 				<div className="has-tooltip">
 					<img
@@ -54,7 +54,7 @@ const Sidebar = () => {
 						alt="sidebar image"
 						className="sidebar_bottom_img"
 					/>
-					<span class="tooltip">Settings</span>
+					<span className="tooltip">Settings</span>
 				</div>
 			</div>
 		</div>
