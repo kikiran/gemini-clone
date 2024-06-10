@@ -1,25 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/GeminiContext";
 
 const InputComponent = () => {
 	const { input, setInput, onSent } = useContext(Context);
+	const [value, setValue] = useState("");
 
-	const handdleChange = (e) => {
+	const handleChange = (e) => {
 		setInput(e.target.value);
+		setValue(e.target.value);
+	};
+
+	const handleSubmit = (e) => {
 		e.preventDefault();
+		setInput(value);
+		if ((value === undefined) | null) {
+			return false;
+		} else {
+			onSent();
+			setInput("");
+		}
 	};
 
 	return (
 		<div className="w-full max-w-4xl">
-			<form className="w-full max-w-4xl">
+			<form className="w-full max-w-4xl" onSubmit={handleSubmit}>
 				<div className="flex items-center border-2 rounded-full border-teal-500 py-2 pr-8">
 					<input
 						className="w-full text-gray-700 m-3 py-1 px-5 leading-tight focus:outline-none"
 						type="text"
 						placeholder="Enter a prompt here"
 						aria-label="prompt here"
-						onChange={handdleChange}
+						onChange={handleChange}
 						value={input}
 					/>
 					<img

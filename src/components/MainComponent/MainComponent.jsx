@@ -16,6 +16,7 @@ const MainComponent = () => {
 		setOpen(false);
 	});
 
+
 	return (
 		<>
 			<div className="flex flex-row justify-between w-full " ref={ref}>

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
+import { Context } from "../../context/GeminiContext";
 
 const Sidebar = () => {
 	const [open, setOpen] = useState(false);
+	const { recentPrompt } = useContext(Context);
 	const onClickOpenHandler = () => {
 		setOpen(!open);
 	};
@@ -28,6 +30,9 @@ const Sidebar = () => {
 						className="sidebar_top_img"
 					/>
 					<span className="tooltip">New Chat</span>
+					<p className="truncate overflow-hidden w-10 pt-2">
+						{recentPrompt}
+					</p>
 				</div>
 			</div>
 			<div className="sidebar_bottom">
